@@ -1,7 +1,7 @@
 /* eslint-disable no-new */
 /* eslint-disable no-undef */
 import FavoriteRestaurantSearchView from '../src/scripts/views/pages/like-restaurants/favorite-restaurant-search-view';
-import FavoriteRestaurantSearchPresenter from '../src/scripts/views/pages/like-restaurants/favorite-restaurant-search-presenter';
+import FavoriteRestaurantShowPresenter from '../src/scripts/views/pages/like-restaurants/favorite-restaurant-show-presenter';
 import FavoriteRestaurantIdb from '../src/scripts/data/favoriterestaurant-idb';
 
 describe('Showing all favorite movies', () => {
@@ -20,7 +20,7 @@ describe('Showing all favorite movies', () => {
     it('should ask for the favorite movies', () => {
       const favoriteRestaurants = spyOnAllFunctions(FavoriteRestaurantIdb);
 
-      new FavoriteRestaurantSearchPresenter({
+      new FavoriteRestaurantShowPresenter({
         view,
         favoriteRestaurants,
       });
@@ -38,7 +38,7 @@ describe('Showing all favorite movies', () => {
       const favoriteRestaurants = spyOnAllFunctions(FavoriteRestaurantIdb);
       favoriteRestaurants.getAllRestaurant.and.returnValues([]);
 
-      new FavoriteRestaurantSearchPresenter({
+      new FavoriteRestaurantShowPresenter({
         view,
         favoriteRestaurants,
       });
@@ -56,19 +56,19 @@ describe('Showing all favorite movies', () => {
       favoriteRestaurants.getAllRestaurant.and.returnValues([
         {
           id: 11,
-          name: 'A',
-          rating: 3,
+          title: 'A',
+          vote_average: 3,
           description: 'Sebuah restaurant A',
         },
         {
           id: 22,
-          name: 'B',
-          rating: 4,
+          title: 'B',
+          vote_average: 4,
           description: 'Sebuah restaurant B',
         },
       ]);
 
-      new FavoriteRestaurantSearchPresenter({
+      new FavoriteRestaurantShowPresenter({
         view,
         favoriteRestaurants,
       });

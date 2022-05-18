@@ -54,19 +54,19 @@ describe('Searching movies', () => {
 
       presenter._showFoundRestaurant([{
         id: 1,
-        name: 'Satu',
+        title: 'Satu',
       }, {
         id: 2,
-        name: 'Dua',
+        title: 'Dua',
       }]);
       expect(document.querySelectorAll('.movie-item').length)
         .toEqual(2);
     });
 
-    it('should show the name of the found movies', () => {
+    it('should show the title of the found movies', () => {
       presenter._showFoundRestaurant([{
         id: 1,
-        name: 'Satu',
+        title: 'Satu',
       }]);
       expect(document.querySelectorAll('.movie__title')
         .item(0).textContent)
