@@ -11,7 +11,7 @@ const Home = {
           </div>
       </section>
       <div class="content">
-        <div id="movies" class="movies">
+        <div id="restaurants" class="restaurants">
  
         </div>
       </div>
@@ -20,7 +20,7 @@ const Home = {
 
   async afterRender() {
     const home = await TheRestaurantDbSource.homeRestaurant();
-    const restaurantsContainer = document.querySelector('#movies');
+    const restaurantsContainer = document.querySelector('#restaurants');
     home.restaurants.forEach((restaurant) => {
       restaurantsContainer.innerHTML += createRestaurantItemTemplate(restaurant);
     });

@@ -4,7 +4,7 @@ import FavoriteRestaurantSearchView from '../src/scripts/views/pages/like-restau
 import FavoriteRestaurantShowPresenter from '../src/scripts/views/pages/like-restaurants/favorite-restaurant-show-presenter';
 import FavoriteRestaurantIdb from '../src/scripts/data/favoriterestaurant-idb';
 
-describe('Showing all favorite movies', () => {
+describe('Showing all favorite restaurants', () => {
   let view;
 
   const renderTemplate = () => {
@@ -16,8 +16,8 @@ describe('Showing all favorite movies', () => {
     renderTemplate();
   });
 
-  describe('When no movies have been liked', () => {
-    it('should ask for the favorite movies', () => {
+  describe('When no restaurants have been liked', () => {
+    it('should ask for the favorite restaurants', () => {
       const favoriteRestaurants = spyOnAllFunctions(FavoriteRestaurantIdb);
 
       new FavoriteRestaurantShowPresenter({
@@ -28,9 +28,9 @@ describe('Showing all favorite movies', () => {
       expect(favoriteRestaurants.getAllRestaurant).toHaveBeenCalledTimes(1);
     });
 
-    it('should show the information that no movies have been liked', (done) => {
-      document.getElementById('movies').addEventListener('movies:updated', () => {
-        expect(document.querySelectorAll('.movie-item__not__found').length).toEqual(1);
+    it('should show the information that no restaurants have been liked', (done) => {
+      document.getElementById('restaurants').addEventListener('restaurants:updated', () => {
+        expect(document.querySelectorAll('.restaurant-item__not__found').length).toEqual(1);
 
         done();
       });
@@ -45,10 +45,10 @@ describe('Showing all favorite movies', () => {
     });
   });
 
-  describe('When favorite movies exist', () => {
-    it('should show the movies', (done) => {
-      document.getElementById('movies').addEventListener('movies:updated', () => {
-        expect(document.querySelectorAll('.movie-item').length).toEqual(2);
+  describe('When favorite restaurants exist', () => {
+    it('should show the restaurants', (done) => {
+      document.getElementById('restaurants').addEventListener('restaurants:updated', () => {
+        expect(document.querySelectorAll('.restaurant-item').length).toEqual(2);
         done();
       });
 

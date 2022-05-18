@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 import { createRestaurantItemTemplate } from '../../templates/template-creator';
 
 class FavoriteRestaurantSearchView {
@@ -5,8 +6,8 @@ class FavoriteRestaurantSearchView {
     return `
        <div class="content">
        <input id="query" type="text">
-       <h2 class="content__heading">Your Liked Movie</h2>
-           <div id="movies" class="movies">
+       <h2 class="content__heading">Your Liked restaurant</h2>
+           <div id="restaurants" class="restaurants">
                       
            </div>
        </div>
@@ -31,13 +32,13 @@ class FavoriteRestaurantSearchView {
       html = this._getEmptyRestaurantTemplate();
     }
 
-    document.getElementById('movies').innerHTML = html;
+    document.getElementById('restaurants').innerHTML = html;
 
-    document.getElementById('movies').dispatchEvent(new Event('movies:updated'));
+    document.getElementById('restaurants').dispatchEvent(new Event('restaurants:updated'));
   }
 
   _getEmptyRestaurantTemplate() {
-    return '<div class="movie-item__not__found movies__not__found">Tidak ada film untuk ditampilkan</div>';
+    return '<div class="restaurant-item__not__found restaurants__not__found">Tidak ada film untuk ditampilkan</div>';
   }
 }
 
