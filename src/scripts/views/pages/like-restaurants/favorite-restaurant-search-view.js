@@ -5,7 +5,8 @@ class FavoriteRestaurantSearchView {
   getTemplate() {
     return `
        <div class="content">
-       <input id="query" type="text">
+       <h2 class="search__heading">Find Your Restaurant Below</h2>
+       <input id="query" type="text" placeholder="Nama Restaurant...">
        <h2 class="content__heading">Your Liked restaurant</h2>
            <div id="restaurants" class="restaurants">
                       

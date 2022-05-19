@@ -1,4 +1,4 @@
-@media screen and (min-width: 650px) {
+@media screen and (min-width: 715px) {
       .app-bar {
           grid-template-columns: 1fr auto;
           padding: 8px 32px;
@@ -45,6 +45,53 @@
           grid-column-start: 1;
           grid-column-end: 3;
       }
+      .restaurant {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 800px;
+        display: grid;
+        /* grid-template-columns: 1fr; */
+        gap: 18px 16px;
+      }
+       
+      .restaurant .restaurant__poster {
+        width: 100%;
+        max-width: 440px;
+      }
+       
+      .restaurant .restaurant__info h4 {
+        margin: 8px 0;
+      }
+      .restaurant__title {
+        text-align: center;
+  }
+
+  .restaurant__overview h3 {
+        text-align: center;
+  }
+
+  .restaurant__overview p {
+    text-align: justify;
+}
+
+  .detailRestaurant-menu{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    text-align: center;
+  }
+
+  .detailRestaurant-menu h2 {
+    text-align: center;
+  }
+
+  .restaurant-menu {
+    list-style-type: none;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        flex-direction: row;
+  }
+      
     }
      
     @media screen and (min-width: 800px) {

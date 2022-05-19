@@ -1,0 +1,59 @@
+  /*
+    restaurant
+  */
+   
+  .restaurant {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 800px;
+      display: grid;
+      gap: 18px 16px;
+    }
+     
+    .restaurant .restaurant__poster {
+      width: 100%;
+      max-width: 440px;
+    }
+     
+    .restaurant .restaurant__info h4 {
+      margin: 10px 0;
+    }
+
+    .restaurant-categories-title {
+          display: inline-flex;
+    }
+    .restaurant-menu {
+      list-style-type: none;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+      flex-direction: row;
+    }
+    .restaurant__title {
+          text-align: center;
+          font-size: 2rem;
+          color: #00ADB5;
+    }
+
+    .detailRestaurant-menu {
+          text-align: center;
+    }
+
+    .detailRestaurant-menu h2{
+      color: #00ADB5;
+      font-size: 1.5rem;
+}
+    
+    .restaurant__overview p{
+          text-align: justify;
+    }
+
+    .restaurant__overview h3{
+          text-align: center;
+          color: #00ADB5;
+          font-size: 1.5rem;
+    }
+
+    .restaurant-menu h3 {
+          margin-bottom: 20px;
+    }
