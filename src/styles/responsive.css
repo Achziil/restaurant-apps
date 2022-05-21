@@ -1,3 +1,18 @@
+@media screen and (max-width: 850px) {
+  .hero {
+    margin: 0 auto;
+    align-items: center;
+    border-radius: 12px;
+    background-image: url("./images/heros/hero-image_4-small.jpg");
+    background-size: cover;
+    height: 50vh;
+    width: 100%;
+    text-align: center;
+    background-position: center;
+    position: relative;
+    top: 0;
+}
+}
 @media screen and (min-width: 851px) {
       .app-bar {
           grid-template-columns: 1fr auto;

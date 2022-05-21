@@ -59,7 +59,6 @@
     top: 0;
     z-index: 99;
     box-shadow: 0 2px 4px 0 #393E46;
-    width: 100%;
   }
    
   .app-bar .app-bar__menu {
@@ -220,15 +219,15 @@
   }
    
   .restaurant-item .restaurant-item__content h3 a {
-    font-size: 1.3rem;
-    padding: 20px;
+    font-size: 1.1rem;
+    padding: 8px;
     color: #00ADB5;
     text-decoration: none;
     transition: ease-in 0.2s;
   }
 
   .restaurant-item .restaurant-item__content h3 a:hover {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     transition: ease-out 0.2s;
   }
    

@@ -5,7 +5,7 @@ import DetailHelper from '../../utils/detail-helper';
 
 const createRestaurantDetailTemplate = (restaurant) => `
   <h2 class="restaurant__title">${restaurant.name}</h2>
-  <img class="restaurant__poster" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name}" />
+  <img class="lazyload restaurant__poster" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name}" />
   <div class="restaurant__info">
   <h4>Categories</h4>
   ${restaurant.categories
@@ -74,8 +74,8 @@ const createCustomerReviewTemplate = (customerReview) => `
 const createRestaurantItemTemplate = (restaurant) => `
   <div class="restaurant-item">
     <div class="restaurant-item__header">
-        <img class="restaurant-item__header__poster" alt="${restaurant.name || '-'}"
-        src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}"/>
+        <img class="lazyload restaurant-item__header__poster" alt="${restaurant.name || '-'}"
+        src="${CONFIG.BASE_IMAGE_URL_SMALL + restaurant.pictureId}"/>
         <div class="restaurant-item__header__rating">
             <p>⭐️<span class="restaurant-item__header__rating__score">${restaurant.rating || '-'}</span></p>
         </div>

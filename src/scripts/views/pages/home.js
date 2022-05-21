@@ -8,7 +8,7 @@ const Home = {
       <span class="loader"><span class="loader-inner"></span></span>
     </div>
     <section class="hero" id="hero">
-          <div class="hero__inner">
+          <div class="lazyload hero__inner">
               <h1 class="hero__title">Katrest</h1>
               <p class="hero__tagline">Find Your Favorite Restaurant !</p>
           </div>
