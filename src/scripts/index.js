@@ -3,10 +3,15 @@ import '../styles/main.css';
 import '../styles/responsive.css';
 import '../styles/hero.css';
 import '../styles/details.css';
+import '../styles/loader.css';
 import App from './views/app';
 import swRegister from './utils/sw-register';
 import WebSocketInitiator from './utils/websocket-initiator';
 import CONFIG from './globals/config';
+
+import './component/app-bar';
+import './component/footer-bar';
+import './component/skip-content';
 
 const app = new App({
   button: document.querySelector('#hamburgerButton'),

@@ -1,5 +1,7 @@
 /* eslint-disable max-len */
 import CONFIG from '../../globals/config';
+// eslint-disable-next-line import/no-cycle
+import DetailHelper from '../../utils/detail-helper';
 
 const createRestaurantDetailTemplate = (restaurant) => `
   <h2 class="restaurant__title">${restaurant.name}</h2>
@@ -34,7 +36,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
             ${restaurant.menus.foods
               .map(
                 (food) => `
-      <li><p><i class="food"></i> ${food.name}</p></li>
+      <li><p><i class="fa-solid fa-bowl-food"></i> ${food.name}</p></li>
     `,
               )
               .join('')}
@@ -45,14 +47,29 @@ const createRestaurantDetailTemplate = (restaurant) => `
             ${restaurant.menus.drinks
               .map(
                 (drink) => `
-        <li><p><i class="drink"></i> ${drink.name}</p></li>
+        <li><p><i class="fa-solid fa-wine-glass"></i> ${drink.name}</p></li>
                 `,
               )
               .join('')}
         </ul>
     </div>
 </div> 
+<h2 class="review-title">Customer Reviews</h2>
+${DetailHelper.eachCustomersReview(restaurant)}
 `;
+
+const createCustomerReviewTemplate = (customerReview) => `
+<div class="detailRestaurant-review">
+            <div class="restaurant-review" id="restaurant-review">
+                <div class="review-header">
+                    <p class="review-name"><i class="fa-solid fa-user"></i> ${customerReview.name}</p>
+                    <p class="review-date">${customerReview.date}</p>
+                </div>
+                <div class="review-comment">
+                    <p><i class="fa-solid fa-comment"></i> ${customerReview.review}</p>
+                </div>
+            </div>
+            `;
 
 const createRestaurantItemTemplate = (restaurant) => `
   <div class="restaurant-item">
@@ -86,5 +103,5 @@ const createUnlikeRestaurantButtonTemplate = () => `
 `;
 
 export {
- createRestaurantDetailTemplate, createRestaurantItemTemplate, createLikeRestaurantButtonTemplate, createUnlikeRestaurantButtonTemplate, 
+ createRestaurantDetailTemplate, createRestaurantItemTemplate, createLikeRestaurantButtonTemplate, createUnlikeRestaurantButtonTemplate, createCustomerReviewTemplate, 
 };

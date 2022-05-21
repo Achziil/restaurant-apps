@@ -1,4 +1,4 @@
-@media screen and (min-width: 715px) {
+@media screen and (min-width: 851px) {
       .app-bar {
           grid-template-columns: 1fr auto;
           padding: 8px 32px;
@@ -90,6 +90,12 @@
         justify-content: space-around;
         align-items: flex-start;
         flex-direction: row;
+  }
+
+/* review styling */
+  .review-title{
+    grid-column-start: 1;
+    grid-column-end: 3;
   }
       
     }
