@@ -1,17 +1,17 @@
 /* eslint-disable no-undef */
 const assert = require('assert');
 
-Feature('Liking Movies');
+Feature('Liking Restaurants');
 Before(({ I }) => {
   I.amOnPage('/#/favorite');
 });
 
-Scenario('showing empty liked movies', ({ I }) => {
+Scenario('showing empty liked restaurants', ({ I }) => {
   I.seeElement('#query');
   I.see('Tidak ada film untuk ditampilkan', '.restaurant-item__not__found');
 });
 
-Scenario('liking one movie', async ({ I }) => {
+Scenario('liking one restaurant', async ({ I }) => {
   I.see('Tidak ada film untuk ditampilkan', '.restaurant-item__not__found');
   I.amOnPage('/');
   I.seeElement('.restaurant__title a');
@@ -27,7 +27,7 @@ Scenario('liking one movie', async ({ I }) => {
   assert.strictEqual(firstFilmTitle, likedFilmTitle);
 });
 
-Scenario('searching movies', async ({ I }) => {
+Scenario('searching restaurants', async ({ I }) => {
   I.see('Tidak ada film untuk ditampilkan', '.restaurant-item__not__found');
 
   I.amOnPage('/');
@@ -48,15 +48,15 @@ Scenario('searching movies', async ({ I }) => {
   I.seeElement('#query');
 
   const searchQuery = titles[1].substring(1, 3);
-  const matchingMovies = titles.filter((title) => title.indexOf(searchQuery) !== -1);
+  const matchingRestaurants = titles.filter((title) => title.indexOf(searchQuery) !== -1);
 
   I.fillField('#query', searchQuery);
   I.pressKey('Enter');
 
-  const visibleLikedMovies = await I.grabNumberOfVisibleElements('.restaurant-item');
-  assert.strictEqual(matchingMovies.length, visibleLikedMovies);
+  const visibleLikedRestaurants = await I.grabNumberOfVisibleElements('.restaurant-item');
+  assert.strictEqual(matchingRestaurants.length, visibleLikedRestaurants);
 
-  matchingMovies.forEach(async (title, index) => {
+  matchingRestaurants.forEach(async (title, index) => {
     const visibleTitle = await I.grabTextFrom(locate('.restaurant__title').at(index + 1));
     assert.strictEqual(title, visibleTitle);
   });
