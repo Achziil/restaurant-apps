@@ -1,7 +1,7 @@
 import 'regenerator-runtime';
 import '../styles/main.css';
-import '../styles/responsive.css';
 import '../styles/hero.css';
+import '../styles/responsive.css';
 import '../styles/details.css';
 import '../styles/loader.css';
 import App from './views/app';

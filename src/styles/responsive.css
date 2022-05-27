@@ -125,12 +125,18 @@
       .restaurants {
           grid-template-columns: repeat(3, 1fr);
       }
+      .hero{
+        width: 100%;
+      }
     }
      
     @media screen and (min-width: 1200px) {
       .restaurants {
           grid-template-columns: repeat(4, 1fr);
       }
+      .hero {
+        min-width: 1000px;
+       }
     }
      
     @media screen and (min-width: 1600px) {

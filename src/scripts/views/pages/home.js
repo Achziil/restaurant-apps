@@ -13,7 +13,7 @@ const Home = {
               <p class="hero__tagline">Find Your Favorite Restaurant !</p>
           </div>
       </section>
-      <div class="content">
+      <div class="content" id="content">
         <div id="restaurants" class="restaurants">
  
         </div>
@@ -31,7 +31,7 @@ const Home = {
     window.setTimeout(() => {
       loaderContainer.classList.add('loader-finish');
       loaderContainer.style.display = 'none';
-    }, 1200);
+    }, 300);
   },
 };
 
